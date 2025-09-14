@@ -6,7 +6,7 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 20:14:50 by pablalva          #+#    #+#             */
-/*   Updated: 2025/09/13 21:34:30 by pablalva         ###   ########.fr       */
+/*   Updated: 2025/09/14 18:54:09 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,8 @@ public:
 	DiamondTrap(const DiamondTrap& other);
 	DiamondTrap& operator=(const DiamondTrap& other);
 	~DiamondTrap();
-	using ScavTrap::attack;
 
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+
 	void attack(const std::string& target);
 
 

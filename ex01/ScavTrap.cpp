@@ -6,7 +6,7 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 15:44:10 by pablalva          #+#    #+#             */
-/*   Updated: 2025/09/13 17:04:25 by pablalva         ###   ########.fr       */
+/*   Updated: 2025/09/14 18:40:22 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,43 +45,7 @@ ScavTrap::~ScavTrap()
 {
 	std::cout << GREEN <<"ScavTrap destructor called." << RESET <<std::endl;
 }
-void ScavTrap::attack(const std::string& target)
-{
-	if(this->H_Points <= 0 || this->E_Points <= 0)
-	{
-		std::cout << GREEN <<"Scavtrap " << this->name << "can not attack" << RESET <<std::endl;
-		return;
-	}
-	std::cout << GREEN <<"Scavtrap " << this->name << " attacks " << target
-	<< " ,causing " << this->A_Points << " points of damage!" << RESET <<std::endl;
-	this->E_Points -= 1;
-}
 void  ScavTrap::guardGate()
 {
 	std::cout << GREEN <<"Scavtrap " << this->name <<" is now in Gate keeper mode." << RESET <<std::endl;
-}
-void ScavTrap::takeDamage(unsigned int amount)
-{
-	if(this->H_Points <= 0)
-	{
-		std::cout << GREEN <<"ScavTrap " << this->name << " is already dead!" << RESET <<std::endl;
-		return;
-	}
-	std::cout << GREEN <<"Scavtrap " << this->name << " receives " << amount << " points of damage!" << RESET <<std::endl;
-	this->H_Points -= amount;
-	std::cout << GREEN <<"Scavtrap " << this->name << " Actual Hit_points: " << this->H_Points << RESET <<std::endl;
-	if(this->H_Points <= 0) 
-		std::cout << GREEN <<"Scavtrap " << this->name << " died!" << RESET <<std::endl;
-}
-void ScavTrap::beRepaired(unsigned int amount)
-{
-	if(this->E_Points > 0 && this->H_Points > 0)
-	{
-		this->E_Points -= 1;
-		this->H_Points += amount;
-		std::cout << GREEN <<"Scavtrap " << this->name << " was rapaired " << amount << " Hit points!" << RESET <<std::endl;
-		std::cout << GREEN <<"Scavtrap " << this->name << " Actual Hit points: " << this->H_Points << RESET <<std::endl;
-	}
-	else
-		std::cout << GREEN <<"Scavtrap " << this->name << " It can't repair itself!"<< RESET <<std::endl;
 }
