@@ -6,7 +6,7 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 15:44:12 by pablalva          #+#    #+#             */
-/*   Updated: 2025/09/14 18:53:09 by pablalva         ###   ########.fr       */
+/*   Updated: 2025/10/01 13:21:18 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ public:
 	ScavTrap(const ScavTrap& other);
 	ScavTrap& operator=(const ScavTrap& other);
 	~ScavTrap();
+	void attack(const std::string& target);
+
 
 	void guardGate();
 };
